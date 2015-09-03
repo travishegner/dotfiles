@@ -49,6 +49,17 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
+function zle-line-init () {
+    echoti smkx
+}
+
+function zle-line-finish () {
+    echoti rmkx
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish  
+
 alias ls='ls --color=auto'
 
 #ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
