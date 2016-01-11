@@ -15,10 +15,11 @@ Plugin 'godlygeek/tabular'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'matthewtodd/vim-twilight'
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'derekwyatt/vim-scala'
 "Plugin 'nathanaelkane/vim-indent-guides'
 
 " The following are examples of different formats supported.

@@ -12,7 +12,7 @@ antigen bundle colorize
 antigen bundle vi-mode
 antigen apply
 
-TERM=xterm-256color
+#TERM=xterm-256color
 #autoload -U colors && colors
 #bindkey "^[Od" backward-word
 #bindkey "^[Oc" forward-word
@@ -41,7 +41,9 @@ key[PageDown]=${terminfo[knp]}
 
 # setup key accordingly
 [[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
+[[ -n "${key[Home]}"    ]]  && bindkey  -M vicmd "${key[Home]}"    beginning-of-line
 [[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
+[[ -n "${key[End]}"     ]]  && bindkey  -M vicmd "${key[End]}"     end-of-line
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
 [[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      up-line-or-history
@@ -49,16 +51,12 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
-function zle-line-init () {
-    echoti smkx
-}
-
-function zle-line-finish () {
-    echoti rmkx
-}
-
-zle -N zle-line-init
-zle -N zle-line-finish  
+if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
+  function zle-line-init () { echoti smkx }
+  function zle-line-finish () { echoti rmkx }
+  zle -N zle-line-init
+  zle -N zle-line-finish
+fi
 
 alias ls='ls --color=auto'
 
