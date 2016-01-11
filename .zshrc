@@ -12,11 +12,6 @@ antigen bundle colorize
 antigen bundle vi-mode
 antigen apply
 
-#TERM=xterm-256color
-#autoload -U colors && colors
-#bindkey "^[Od" backward-word
-#bindkey "^[Oc" forward-word
-
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/thegner/.zshrc'
 
@@ -50,6 +45,10 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
+bindkey "^[Od" backward-word
+bindkey -M vicmd "^[Od" backward-word
+bindkey "^[Oc" forward-word
+bindkey -M vicmd "^[Oc" forward-word
 
 if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
   function zle-line-init () { echoti smkx }
