@@ -84,7 +84,7 @@ tssalt() {
 }
 
 tpass() {
-	PASSWORD_STORE_DIR=/home/thegner/git_repos/passdb pass "$@"
+	PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb pass "$@"
 }
 
 gclone() {
@@ -95,7 +95,7 @@ gclone() {
 #for working autocomplete:
 compdef _tpass tpass
 _tpass() {
-	PASSWORD_STORE_DIR=/home/thegner/git_repos/passdb _pass
+	PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb _pass
 }
 
 #clear the back buffer
