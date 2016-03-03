@@ -59,6 +59,10 @@ fi
 
 alias ls='ls --color=auto'
 
+#This is horribly, horribly a bad idea, I only do it for intranet appliances that use weak keys.
+#Don't do this unless you want to be pwnd
+alias google-chrome-stable='google-chrome-stable --cipher-suite-blacklist=0x0088,0x0087,0x0039,0x0038,0x0044,0x0045,0x0066,0x0032,0x0033,0x0016,0x0013'
+
 #ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
 if [ -n "$DESKTOP_SESSION" ];then
@@ -81,6 +85,11 @@ tssalt() {
 
 tpass() {
 	PASSWORD_STORE_DIR=/home/thegner/git_repos/passdb pass "$@"
+}
+
+gclone() {
+  dir=$(echo $1 | sed 's/^http\(s*\):\/\///g' | sed 's/^git@//g' | sed 's/\.git$//g' | sed 's/:/\//g' )
+  git clone $1 "$HOME/src/$dir"
 }
 
 #for working autocomplete:
