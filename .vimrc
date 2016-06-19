@@ -20,6 +20,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'fatih/vim-go'
 "Plugin 'nathanaelkane/vim-indent-guides'
 
 " The following are examples of different formats supported.
@@ -77,6 +78,7 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 let g:EasyMotion_smartcase = 1
+let g:syntastic_go_checkers = ['go']
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size = 1
 "let g:indent_guides_auto_colors = 0
