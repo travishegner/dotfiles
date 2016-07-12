@@ -2,9 +2,10 @@ set nocompatible              " be iMproved, required
 set t_Co=256
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/dein.vim
-call dein#begin(expand('~/.cache/dein'))
+set rtp+=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.config/nvim/bundle'))
 
+call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-go', {'build': 'make'})
 call dein#add('saltstack/salt-vim')
