@@ -58,10 +58,11 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
 fi
 
 alias ls='ls --color=auto'
+alias vim=nvim
 
 #This is horribly, horribly a bad idea, I only do it for intranet appliances that use weak keys.
 #Don't do this unless you want to be pwnd
-alias google-chrome-stable='google-chrome-stable --cipher-suite-blacklist=0x0088,0x0087,0x0039,0x0038,0x0044,0x0045,0x0066,0x0032,0x0033,0x0016,0x0013'
+alias google-chrome-unsafe='google-chrome-stable --cipher-suite-blacklist=0x0088,0x0087,0x0039,0x0038,0x0044,0x0045,0x0066,0x0032,0x0033,0x0016,0x0013'
 
 #ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 

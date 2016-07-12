@@ -2,57 +2,33 @@ set nocompatible              " be iMproved, required
 set t_Co=256
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+set rtp+=~/.vim/bundle/dein.vim
+call dein#begin(expand('~/.cache/dein'))
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'saltstack/salt-vim'
-Plugin 'godlygeek/tabular'
-Plugin 'gabrielelana/vim-markdown'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'matthewtodd/vim-twilight'
-Plugin 'scrooloose/syntastic'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'fatih/vim-go'
-"Plugin 'nathanaelkane/vim-indent-guides'
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-go', {'build': 'make'})
+call dein#add('saltstack/salt-vim')
+call dein#add('godlygeek/tabular')
+call dein#add('gabrielelana/vim-markdown')
+"call dein#add('altercation/vim-colors-solarized')
+call dein#add('matthewtodd/vim-twilight')
+call dein#add('scrooloose/syntastic')
+call dein#add('easymotion/vim-easymotion')
+call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
+"call dein#add('derekwyatt/vim-scala')
+call dein#add('fatih/vim-go')
+"call dein#add('Shougo/context_filetype.vim')
+call dein#add('Shougo/neopairs.vim')
+call dein#add('Shougo/echodoc.vim')
+"call dein#add('Shougo/neoinclude.vim')
+call dein#add('vim-airline/vim-airline')
+call dein#add('majutsushi/tagbar')
+call dein#add('bling/vim-bufferline')
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
+call dein#end()
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+filetype plugin on
 
 syntax on
 set number
@@ -66,8 +42,13 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set noexpandtab
+set noshowmode
 
-set clipboard=unnamedplus
+autocmd FileType yaml set expandtab
+autocmd FileType go set noexpandtab
+
+set clipboard+=unnamedplus
+set completeopt-=preview
 
 colorscheme twilight
 autocmd VimEnter,Colorscheme * :hi Normal ctermbg=none
@@ -79,6 +60,21 @@ map  N <Plug>(easymotion-prev)
 
 let g:EasyMotion_smartcase = 1
 let g:syntastic_go_checkers = ['go']
+let g:go_fmt_options = '-s'
+let g:go_metalinter_enabled = ['gofmt', 'gotype', 'goimports', 'dupl', 'golint', 'structcheck', 'aligncheck', 'vet', 'errcheck', 'ineffassign', 'vetshadow', 'varcheck', 'deadcode', 'interfacer', 'goconst', 'gosimple', 'staticcheck']
+let g:echodoc_enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#max_abbr_width = 0
+let g:deoplete#max_menu_width = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
+let g:bufferline_echo = 0
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_section_y = airline#section#create([''])
+let g:airline_section_z = airline#section#create(['%l/%L'])
+let g:fugitive_git_executable = "env GIT_SSH_COMMAND='ssh -o ControlPersist=no' git"
+
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size = 1
 "let g:indent_guides_auto_colors = 0
