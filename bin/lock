@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pstatus=$(playerctl status)
+
+if [ "$pstatus" == "Playing" ]; then
+  playerctl play-pause
+fi
+
+slimlock

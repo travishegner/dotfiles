@@ -1,0 +1,21 @@
+#! /usr/bin/perl
+
+use MIME::Base32 qw(RFC);
+use strict;
+
+undef $/;
+
+my $string = <STDIN>;
+my $changed;
+
+if ( $ARGV[0] eq "-d" ){
+        $changed = MIME::Base32::decode($string);
+}else{
+        $changed = MIME::Base32::encode($string); 
+}
+
+if ( $changed =~ /\n$/ ) {
+    printf $changed;
+}else{
+    printf $changed . "\n";
+}

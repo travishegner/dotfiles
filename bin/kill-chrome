@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ps aux | grep -v grep | grep -v 'kill-chrome' | grep chrome | awk {'print $2'} | xargs kill
