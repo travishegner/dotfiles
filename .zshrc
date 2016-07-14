@@ -7,7 +7,7 @@ antigen theme ys
 #antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle git
-antigen bundle colored-man
+antigen bundle colored-man-pages
 antigen bundle colorize
 antigen bundle vi-mode
 antigen apply
