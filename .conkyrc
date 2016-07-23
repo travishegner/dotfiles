@@ -59,7 +59,7 @@ ${color1}\
 ${time %H:%M %Z} | \
 ${tztime UTC %H:%M %Z} | \
 ${color1}IO:${color1} ${diskiograph /dev/md0 10,50 00ff00 ff0000 -t} ${color4}| \
-${color1}CPU:${cpu}%${color2} \
+${color1}CPU: ${cpu}%${color2} \
 ${cpugraph cpu1 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu2 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu3 10,10 00ff00 ff0000 -t}\
@@ -88,7 +88,7 @@ ${color1}\
 ${time %H:%M %Z} | \
 ${tztime UTC %H:%M %Z} | \
 ${color1}IO:${color1} ${diskiograph /dev/md0 10,50 00ff00 ff0000 -t} ${color4}| \
-${color1}CPU:${cpu}%${color2} \
+${color1}CPU: ${cpu}%${color2} \
 ${cpugraph cpu1 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu2 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu3 10,10 00ff00 ff0000 -t}\
@@ -97,7 +97,7 @@ ${color1}${acpitemp}C ${color4}| \
 ${color1}Load:${color2}${loadavg 1}${color1}/${loadavg 2}/${color3}${loadavg 3}${color1} ${loadgraph 10,50 00ff00 ff0000 4 -t} ${color4}| \
 ${color1}RAM:${memperc}% ${memgraph 10,50 00ff00 ff0000 -t} ${color4}| \
 ${color1}Uptime:${color2}${uptime}\
-${alignr}Battery: ${battery} ${battery_time}
+${alignr}Batt: ${battery} ${color4}| ${color1}${battery_time} remaining
 ]]
 end
 
@@ -107,7 +107,7 @@ ${color1}\
 ${time %H:%M %Z} | \
 ${tztime UTC %H:%M %Z} | \
 ${color1}IO:${color1} ${diskiograph /dev/md0 10,50 00ff00 ff0000 -t} ${color4}| \
-${color1}CPU:${cpu}%${color2} \
+${color1}CPU: ${cpu}%${color2} \
 ${cpugraph cpu1 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu2 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu3 10,10 00ff00 ff0000 -t}\
