@@ -1,0 +1,6 @@
+[Unit]
+Description=Full System Backup
+
+[Service]
+Type=simple
+ExecStart=/home/thegner/tools/backup/backup.sh
