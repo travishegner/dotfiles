@@ -6,6 +6,7 @@ export EDITOR=vim
 export GOPATH=~/go
 export PATH=$HOME/tools/bin:$GOPATH/bin:$PATH
 export LANG=en_US.UTF-8
+export PKG_CONFIG_PATH=:$HOME/tools/pkgconfig$PKG_CONFIG_PATH
 
 #_JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
 eval $(gnome-keyring-daemon --start)
