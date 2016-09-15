@@ -104,3 +104,18 @@ _tpass() {
 clearbb() {
 	echo -ne '\033c'
 }
+
+rwireshark() {
+	local ipaddr=$(ip addr show eno1 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
+	local host=$1
+	shift
+	local int=$1
+	shift
+	if [[ $@ ]]; then
+		local args=" and $@"
+	fi
+		ssh $host "sudo tcpdump -i $int -U -s0 -w - \"not (port 22 and host ${ipaddr}) $args\"" | wireshark-gtk -k -i -
+}
+
+# added by travis gem
+[ -f /home/thegner/.travis/travis.sh ] && source /home/thegner/.travis/travis.sh

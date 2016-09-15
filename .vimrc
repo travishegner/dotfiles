@@ -53,6 +53,7 @@ set completeopt-=preview
 
 colorscheme twilight
 autocmd VimEnter,Colorscheme * :hi Normal ctermbg=none
+autocmd VimEnter,Colorscheme * :hi NonText ctermbg=none
 
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)

@@ -4,7 +4,7 @@ source ~/.zshrc
 xrdb ~/.Xresources
 export EDITOR=vim
 export GOPATH=~/go
-export PATH=$HOME/tools/bin:$GOPATH/bin:$PATH
+export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 export LANG=en_US.UTF-8
 export PKG_CONFIG_PATH=:$HOME/tools/pkgconfig$PKG_CONFIG_PATH
 
@@ -12,7 +12,7 @@ export PKG_CONFIG_PATH=:$HOME/tools/pkgconfig$PKG_CONFIG_PATH
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-awesome &
+$1 &
 pid=$!
 sleep 1
 
@@ -20,8 +20,9 @@ sleep 1
 xcompmgr -CcfF -I0.5 -O0.5 -D1 -t-5 -l-5 -r4.2 -o.82 &
 pulseaudio --start &
 volumeicon &
-xchat &
-conky &
+#xchat &
+mattermost &
+#conky &
 
 sudo mount --bind ~/src ~/go/src
 
