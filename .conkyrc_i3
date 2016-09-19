@@ -1,0 +1,127 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+
+conky.config = {
+  alignment = 'bottom_right',
+  background = true,
+  border_width = 1,
+  cpu_avg_samples = 1,
+  default_color = '222222',
+  default_outline_color = '222222',
+  draw_borders = false,
+  draw_graph_borders = true,
+  draw_outline = false,
+  draw_shades = false,
+  use_xft = true,
+  font = 'Anonymous Pro:size=10',
+  gap_x = 3850,
+  gap_y = 0,
+  minimum_width = 1600,
+  minimum_height = 5,
+  maximum_width = 1600,
+  net_avg_samples = 1,
+  no_buffers = true,
+  out_to_console = false,
+  out_to_stderr = false,
+  extra_newline = false,
+  own_window = true,
+  own_window_colour = '000000',
+  own_window_type = 'desktop',
+  own_window_transparent = false,
+  own_window_argb_visual = true,
+  own_window_argb_value = 255,
+  own_window_hints = 'undecorated,above,sticky,skip_taskbar,skip_pager',
+  stippled_borders = 0,
+  update_interval = 1.0,
+  uppercase = false,
+  use_spacer = 'left',
+  show_graph_scale = false,
+  show_graph_range = false,
+  format_human_readable = true,
+  double_buffer = true,
+  color1 = '666666',
+  color2 = '888888',
+  color3 = '444444',
+  color4 = 'ffffff',
+}
+
+local mytext = ""
+local hn = function ()
+  local f = io.popen ("/bin/hostname")
+  local hostname = f:read("*a") or ""
+  f:close()
+  hostname =string.gsub(hostname, "\n$", "")
+  return hostname
+end
+local hostname = hn()
+
+if hostname == 'it-thegner' then
+  mytext = [[
+${alignr}\
+${color1}\
+${time %H:%M %Z} | \
+${tztime UTC %H:%M %Z} | \
+${color1}IO:${color1} ${diskiograph /dev/md0 10,50 00ff00 ff0000 -t} ${color4}| \
+${color1}CPU: ${cpu}%${color2} \
+${cpugraph cpu1 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu2 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu3 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu4 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu5 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu6 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu7 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu8 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu9 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu10 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu11 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu12 10,10 00ff00 ff0000 -t} \
+${color1}${acpitemp}C ${color4}| \
+${color1}Load:${color2}${loadavg 1}${color1}/${loadavg 2}/${color3}${loadavg 3}${color1} ${loadgraph 10,50 00ff00 ff0000 12 -t} ${color4}| \
+${color1}RAM:${memperc}% ${memgraph 10,50 00ff00 ff0000 -t} ${color4}| \
+${color1}Uptime:${color2}${uptime}\
+]]
+end
+--${alignr}${execi 5 ssh salt "git -C /srv/salt/master log -n 1 --pretty=\"%aD -- %an -- %h -- %s\""}
+
+if hostname == 'tss-thegnerlptp' then
+  conky.config.maximum_width = 1354
+  conky.config.minimum_width = 1354
+  mytext = [[
+${color1}\
+${time %H:%M %Z} | \
+${tztime UTC %H:%M %Z} | \
+${color1}IO:${color1} ${diskiograph /dev/md0 10,50 00ff00 ff0000 -t} ${color4}| \
+${color1}CPU: ${cpu}%${color2} \
+${cpugraph cpu1 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu2 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu3 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu4 10,10 00ff00 ff0000 -t} \
+${color1}${acpitemp}C ${color4}| \
+${color1}Load:${color2}${loadavg 1}${color1}/${loadavg 2}/${color3}${loadavg 3}${color1} ${loadgraph 10,50 00ff00 ff0000 4 -t} ${color4}| \
+${color1}RAM:${memperc}% ${memgraph 10,50 00ff00 ff0000 -t} ${color4}| \
+${color1}Uptime:${color2}${uptime}\
+${alignr}Batt: ${battery} ${color4}| ${color1}${battery_time} remaining
+]]
+end
+
+if hostname == 'tmh-desktop1' then
+  mytext = [[
+${color1}\
+${time %H:%M %Z} | \
+${tztime UTC %H:%M %Z} | \
+${color1}IO:${color1} ${diskiograph /dev/md0 10,50 00ff00 ff0000 -t} ${color4}| \
+${color1}CPU: ${cpu}%${color2} \
+${cpugraph cpu1 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu2 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu3 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu4 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu5 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu6 10,10 00ff00 ff0000 -t} \
+${color4}| \
+${color1}Load:${color2}${loadavg 1}${color1}/${loadavg 2}/${color3}${loadavg 3}${color1} ${loadgraph 10,50 00ff00 ff0000 6 -t} ${color4}| \
+${color1}RAM:${memperc}% ${memgraph 10,50 00ff00 ff0000 -t} ${color4}| \
+${color1}Uptime:${color2}${uptime}\
+]]
+end
+
+conky.text = mytext
+
