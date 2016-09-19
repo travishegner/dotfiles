@@ -59,6 +59,7 @@ fi
 
 alias ls='ls --color=auto'
 alias vim=nvim
+alias yolo='packer -Syu --noedit --noconfirm'
 
 #This is horribly, horribly a bad idea, I only do it for intranet appliances that use weak keys.
 #Don't do this unless you want to be pwnd
@@ -106,7 +107,7 @@ clearbb() {
 }
 
 rwireshark() {
-	local ipaddr=$(ip addr show eno1 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
+	local ipaddr=$(ip addr show eth0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
 	local host=$1
 	shift
 	local int=$1

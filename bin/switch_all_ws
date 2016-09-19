@@ -1,0 +1,13 @@
+#!/bin/bash
+current_output=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).output')
+
+for o in $(i3-msg -t get_outputs | jq -r '.[]'.name | grep -v xroot-0)
+do
+	var_name=$(echo $o | tr -d '-')
+	ws_num=$(eval "echo \$$var_name")$1
+	i3-msg focus output $o
+	i3-msg workspace number $ws_num
+done
+sleep 0.1
+
+i3-msg focus output $current_output

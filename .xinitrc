@@ -1,5 +1,8 @@
 #!/bin/bash
 
+session=$1
+
+source ~/tools/bin/detect_outputs
 source ~/.zshrc
 xrdb ~/.Xresources
 export EDITOR=vim
@@ -12,7 +15,7 @@ export PKG_CONFIG_PATH=:$HOME/tools/pkgconfig$PKG_CONFIG_PATH
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-$1 &
+$session &
 pid=$!
 sleep 1
 
@@ -22,7 +25,16 @@ pulseaudio --start &
 volumeicon &
 #xchat &
 mattermost &
-#conky &
+
+case $session in
+"awesome")
+	conky &
+	;;
+"i3")
+	feh --bg-scale /home/thegner/tools/arch_linux_gnu-32977.png
+	conky -c .conkyrc_i3
+	;;
+esac
 
 sudo mount --bind ~/src ~/go/src
 
