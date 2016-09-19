@@ -58,8 +58,7 @@ if hostname == 'it-thegner' then
   mytext = [[
 ${alignr}\
 ${color1}\
-${time %H:%M %Z} | \
-${tztime UTC %H:%M %Z} | \
+${color1}Uptime:${color2}${uptime} | \
 ${color1}IO:${color1} ${diskiograph /dev/md0 10,50 00ff00 ff0000 -t} ${color4}| \
 ${color1}CPU: ${cpu}%${color2} \
 ${cpugraph cpu1 10,10 00ff00 ff0000 -t}\
@@ -77,7 +76,8 @@ ${cpugraph cpu12 10,10 00ff00 ff0000 -t} \
 ${color1}${acpitemp}C ${color4}| \
 ${color1}Load:${color2}${loadavg 1}${color1}/${loadavg 2}/${color3}${loadavg 3}${color1} ${loadgraph 10,50 00ff00 ff0000 12 -t} ${color4}| \
 ${color1}RAM:${memperc}% ${memgraph 10,50 00ff00 ff0000 -t} ${color4}| \
-${color1}Uptime:${color2}${uptime}\
+${time %H:%M:%S %Z} | \
+${tztime UTC %H:%M:%S %Z} \
 ]]
 end
 --${alignr}${execi 5 ssh salt "git -C /srv/salt/master log -n 1 --pretty=\"%aD -- %an -- %h -- %s\""}
