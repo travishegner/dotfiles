@@ -1,0 +1,4 @@
+bar {
+	tray_output primary
+	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/main
+}

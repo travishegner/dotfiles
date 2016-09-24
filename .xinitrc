@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cat /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.base /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.$(hostname) >> /home/.thegner/.config/i3/config
+
 session=$1
 
 source ~/tools/bin/detect_outputs

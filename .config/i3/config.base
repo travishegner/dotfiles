@@ -154,26 +154,6 @@ mode "resize" {
 
 bindsym $mod+z mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-	tray_output primary
-	output DVI-I-1
-	#position top
-	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/main
-}
-
-bar {
-	tray_output none
-	output DVI-D-1
-	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/left
-}
-
-bar {
-	tray_output none
-	output HDMI-1
-}
-
 force_focus_wrapping yes
 workspace_layout tabbed
 
