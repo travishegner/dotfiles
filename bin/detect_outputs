@@ -1,0 +1,10 @@
+#!/bin/bash
+
+outputs=($(xrandr | grep connected | awk '{print $1}' | tr -d '-'))
+
+xrandr --output $(xrandr | grep connected | head -1 | awk '{print $1}') --primary
+
+for o in "${!outputs[@]}"; do
+	eval $( echo ${outputs[$o]}=$(( $o + 1 )) )
+	export $(echo ${outputs[$o]})
+done

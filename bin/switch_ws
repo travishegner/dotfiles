@@ -1,0 +1,4 @@
+#!/bin/bash
+
+output=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).output' | tr -d '-')
+echo $(eval "echo \$$output")$1
