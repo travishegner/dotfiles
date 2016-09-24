@@ -110,7 +110,14 @@ ${cpugraph cpu2 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu3 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu4 10,10 00ff00 ff0000 -t}\
 ${cpugraph cpu5 10,10 00ff00 ff0000 -t}\
-${cpugraph cpu6 10,10 00ff00 ff0000 -t} \
+${cpugraph cpu6 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu7 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu8 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu9 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu10 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu11 10,10 00ff00 ff0000 -t}\
+${cpugraph cpu12 10,10 00ff00 ff0000 -t} \
+${color1}${acpitemp}C ${color4}| \
 ${color4}| \
 ${color1}Load:${color2}${loadavg 1}${color1}/${loadavg 2}/${color3}${loadavg 3}${color1} ${loadgraph 10,50 00ff00 ff0000 6 -t} ${color4}| \
 ${color1}RAM:${memperc}% ${memgraph 10,50 00ff00 ff0000 -t} ${color4}| \
