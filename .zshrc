@@ -120,3 +120,5 @@ rwireshark() {
 
 # added by travis gem
 [ -f /home/thegner/.travis/travis.sh ] && source /home/thegner/.travis/travis.sh
+
+unsetopt share_history
