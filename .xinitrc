@@ -17,11 +17,12 @@ export PKG_CONFIG_PATH=:$HOME/tools/pkgconfig$PKG_CONFIG_PATH
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
+sudo mount --bind ~/src ~/go/src
+
 $session &
 pid=$!
 sleep 1
 
-sudo mount --bind ~/src ~/go/src
 
 twmnd &
 #xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D1 -O.02 -I.02 &
