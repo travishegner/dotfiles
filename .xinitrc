@@ -31,6 +31,7 @@ pulseaudio --start &
 volumeicon &
 #xchat &
 mattermost &
+numlockx on &
 
 case $session in
 "awesome")

@@ -6,4 +6,4 @@ if [ "$pstatus" == "Playing" ]; then
   playerctl play-pause
 fi
 
-slimlock
+i3lock -t -c 000000 -i /home/thegner/tools/arch_linux_gnu-32977.png
