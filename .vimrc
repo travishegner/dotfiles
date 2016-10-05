@@ -5,27 +5,48 @@ filetype off                  " required
 set rtp+=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.config/nvim/bundle'))
 
+"plugin manager
 call dein#add('Shougo/dein.vim')
+
+"autocomplete
 call dein#add('Shougo/deoplete.nvim')
+call dein#add('Shougo/neoinclude.vim')
 call dein#add('zchee/deoplete-go', {'build': 'make'})
-call dein#add('saltstack/salt-vim')
-call dein#add('godlygeek/tabular')
-call dein#add('gabrielelana/vim-markdown')
-"call dein#add('altercation/vim-colors-solarized')
-call dein#add('matthewtodd/vim-twilight')
-call dein#add('scrooloose/syntastic')
+
+"nav
 call dein#add('easymotion/vim-easymotion')
-call dein#add('tpope/vim-fugitive')
-call dein#add('airblade/vim-gitgutter')
-"call dein#add('derekwyatt/vim-scala')
-call dein#add('fatih/vim-go')
-"call dein#add('Shougo/context_filetype.vim')
-call dein#add('Shougo/neopairs.vim')
 call dein#add('Shougo/echodoc.vim')
-"call dein#add('Shougo/neoinclude.vim')
 call dein#add('vim-airline/vim-airline')
 call dein#add('majutsushi/tagbar')
 call dein#add('bling/vim-bufferline')
+
+"syntax
+call dein#add('scrooloose/syntastic')
+call dein#add('fatih/vim-go')
+call dein#add('Shougo/neopairs.vim')
+"call dein#add('jceb/vim-hier')
+
+"colors/visuals
+"call dein#add('kien/rainbow_parentheses.vim')
+call dein#add('luochen1990/rainbow')
+call dein#add('saltstack/salt-vim')
+call dein#add('matthewtodd/vim-twilight')
+call dein#add('gabrielelana/vim-markdown')
+call dein#add('airblade/vim-gitgutter')
+
+"scala
+call dein#add('derekwyatt/vim-scala')
+call dein#add('ensime/ensime-vim')
+
+"nerdtree
+call dein#add('Xuyuanp/nerdtree-git-plugin')
+call dein#add('scrooloose/nerdtree')
+
+"disabled
+"call dein#add('godlygeek/tabular')
+"call dein#add('altercation/vim-colors-solarized')
+"call dein#add('Shougo/context_filetype.vim')
+"call dein#add('tpope/vim-fugitive')
 
 call dein#end()
 
@@ -55,6 +76,15 @@ colorscheme twilight
 autocmd VimEnter,Colorscheme * :hi Normal ctermbg=none
 autocmd VimEnter,Colorscheme * :hi NonText ctermbg=none
 
+"autocmd VimEnter * RainbowParenthesesActivate
+"autocmd Syntax * RainbowParenthesesLoadRound
+"autocmd Syntax * RainbowParenthesesLoadSquare
+"autocmd Syntax * RainbowParenthesesLoadBraces
+
+autocmd BufWritePost *.scala silent :EnTypeCheck
+
+"autocmd VimEnter *.scala NERDTree
+
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
@@ -77,6 +107,10 @@ let g:airline_section_y = airline#section#create([''])
 let g:airline_section_z = airline#section#create(['%l/%L'])
 let g:fugitive_git_executable = "env GIT_SSH_COMMAND='ssh -o ControlPersist=no' git"
 
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.scala = ['[^. *\t]\.\w*', '[:\[,] ?\w*', '^import .*']
+
+let g:rainbow_active = 1
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size = 1
 "let g:indent_guides_auto_colors = 0

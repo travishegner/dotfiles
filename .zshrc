@@ -60,6 +60,7 @@ fi
 alias ls='ls --color=auto'
 alias vim=nvim
 alias yolo='packer -Syu --noedit --noconfirm'
+alias time='/usr/bin/time -f "\nTime:\t\t%E\nRAM (kb):\t%M"'
 
 #This is horribly, horribly a bad idea, I only do it for intranet appliances that use weak keys.
 #Don't do this unless you want to be pwnd

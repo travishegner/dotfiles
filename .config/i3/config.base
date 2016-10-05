@@ -40,7 +40,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec dmenu_run -b -fn "xft:AnonymicePowerline Nerd Font:size=12:antialias=true:hinting=true:style=Regular"
+bindsym $mod+r exec --no-startup-id dmenu_run -b -fn "xft:AnonymicePowerline Nerd Font:size=12:antialias=true:hinting=true:style=Regular"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -202,3 +202,5 @@ bindsym $mod+Mod1+6 exec --no-startup-id switch_all_ws 6
 bindsym $mod+Mod1+7 exec --no-startup-id switch_all_ws 7
 bindsym $mod+Mod1+8 exec --no-startup-id switch_all_ws 8
 bindsym $mod+Mod1+9 exec --no-startup-id switch_all_ws 9
+
+exec --no-startup-id switch_all_ws 1

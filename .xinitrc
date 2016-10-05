@@ -19,9 +19,11 @@ export SSH_AUTH_SOCK
 
 sudo mount --bind ~/src ~/go/src
 
-$session &
-pid=$!
-sleep 1
+if "x$session" = "xawesome"; then
+	$session &
+	pid=$!
+	sleep 1
+fi
 
 
 twmnd &
@@ -39,8 +41,9 @@ case $session in
 	;;
 "i3")
 	feh --bg-scale /home/thegner/tools/arch_linux_gnu-32977.png
-	switch_all_ws 1
 	;;
 esac
 
-wait $pid
+if "x$session" = "xawesome"; then
+	wait $pid
+fi
