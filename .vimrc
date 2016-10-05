@@ -104,7 +104,7 @@ let g:bufferline_echo = 0
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_y = airline#section#create([''])
-let g:airline_section_z = airline#section#create(['%l/%L'])
+let g:airline_section_z = airline#section#create(['%l/%L %c'])
 let g:fugitive_git_executable = "env GIT_SSH_COMMAND='ssh -o ControlPersist=no' git"
 
 let g:deoplete#omni#input_patterns = {}

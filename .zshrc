@@ -80,14 +80,14 @@ saltssh() {
 }
 
 tssalt() {
-    # First (${(q)@}) escapes all characters in the $@ array 
-    # that have special meaning, 
-    # second (${(j. .)…}) joins the array into one string.
+    # First (${(q)@}) escapes all characters in the $@ array
+    # that have special meaning,
+    # second (${(j. .)…}) joins the array into one string
     ssh -t thegner@salt.ad.trilliumstaffing.com sudo salt "${(j. .)${(q)@}}"
 }
 
 tpass() {
-	PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb pass "$@"
+  PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb pass "$@"
 }
 
 gclone() {
@@ -99,24 +99,24 @@ gclone() {
 #for working autocomplete:
 compdef _tpass tpass
 _tpass() {
-	PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb _pass
+  PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb _pass
 }
 
 #clear the back buffer
 clearbb() {
-	echo -ne '\033c'
+  echo -ne '\033c'
 }
 
 rwireshark() {
-	local ipaddr=$(ip addr show eth0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
-	local host=$1
-	shift
-	local int=$1
-	shift
-	if [[ $@ ]]; then
-		local args=" and $@"
-	fi
-		ssh $host "sudo tcpdump -i $int -U -s0 -w - \"not (port 22 and host ${ipaddr}) $args\"" | wireshark-gtk -k -i -
+  local ipaddr=$(ip addr show eth0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
+  local host=$1
+  shift
+  local int=$1
+  shift
+  if [[ $@ ]]; then
+    local args=" and $@"
+  fi
+    ssh $host "sudo tcpdump -i $int -U -s0 -w - \"not (port 22 and host ${ipaddr}) $args\"" | wireshark-gtk -k -i -
 }
 
 # added by travis gem
