@@ -18,6 +18,7 @@ eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
 sudo mount --bind ~/src ~/go/src
+sudo mount --bind ~/src/gitlab ~/src/gitlab.in.trilliumstaffing.com
 
 if "x$session" = "xawesome"; then
 	$session &
