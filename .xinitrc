@@ -7,7 +7,7 @@ session=$1
 source ~/tools/bin/detect_outputs
 source ~/.zshrc
 xrdb ~/.Xresources
-export EDITOR=vim
+export EDITOR=nvim
 export GOPATH=~/go
 export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 export LANG=en_US.UTF-8
@@ -35,6 +35,8 @@ volumeicon &
 #xchat &
 mattermost &
 numlockx on &
+autocutsel -fork
+#autocutsel -selection PRIMARY -fork
 
 case $session in
 "awesome")
