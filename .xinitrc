@@ -5,13 +5,15 @@ cat /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.base /h
 session=$1
 
 source ~/tools/bin/detect_outputs
-source ~/.zshrc
+# .zshrc is sourced automatically, and sourcing here now causes syntax errors with other shells
+#source ~/.zshrc
 xrdb ~/.Xresources
 export EDITOR=nvim
 export GOPATH=~/go
 export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 export LANG=en_US.UTF-8
 export PKG_CONFIG_PATH=:$HOME/tools/pkgconfig$PKG_CONFIG_PATH
+export JAVA_HOME=/usr/lib/jvm/default/
 
 #_JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
 eval $(gnome-keyring-daemon --start)

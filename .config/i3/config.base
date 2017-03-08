@@ -165,10 +165,10 @@ bindsym $mod+Shift+i move output left; focus output left
 #bindsym $mod+Control+o move workspace to output right
 #bindsym $mod+Control+i move workspace to output left
 
-#bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-#bindsym XF86AudioNext exec --no-startup-id playerctl next
-#bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-#bindsym XF86AudioStop exec --no-startup-id playerctl stop
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
 bindsym $mod+Control+l workspace next_on_output
 bindsym $mod+Control+h workspace prev_on_output
