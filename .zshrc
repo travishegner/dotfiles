@@ -1,4 +1,4 @@
-source /usr/share/zsh/scripts/antigen/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 
 antigen use oh-my-zsh
 #antigen theme aussiegeek
@@ -108,7 +108,7 @@ clearbb() {
 }
 
 rwireshark() {
-  local ipaddr=$(ip addr show eth0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
+  local ipaddr=$(ip addr show enp7s0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
   local host=$1
   shift
   local int=$1

@@ -5,7 +5,7 @@ cat /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.base /h
 session=$1
 
 source ~/tools/bin/detect_outputs
-source ~/.zshrc
+#source ~/.zshrc
 xrdb ~/.Xresources
 export EDITOR=vim
 export GOPATH=~/go

@@ -1,4 +1,16 @@
+#bar {
+#	tray_output primary
+#	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/home/home
+#}
+
 bar {
 	tray_output primary
-	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/home/home
+	output DVI-0
+	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/main
+}
+
+bar {
+	tray_output none
+	output DVI-1
+#	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/left/left
 }
