@@ -1,4 +1,5 @@
 source /usr/share/zsh/share/antigen.zsh
+#source /home/thegner/.antigen/antigen.zsh
 
 antigen use oh-my-zsh
 #antigen theme aussiegeek

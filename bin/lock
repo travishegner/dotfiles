@@ -1,9 +1,13 @@
 #!/bin/bash
 
 pstatus=$(playerctl status)
+#pstatus=$(pacmd list-sink-inputs | grep "state: RUNNING")
+#code=$?
 
-if [ "$pstatus" == "Playing" ]; then
+#if [ $code -eq 0 ]; then
+if [ $pstatus = "Playing" ]; then
   playerctl play-pause
+  #xdotool key XF86AudioPlay
 fi
 
 i3lock -t -c 000000 #-i /home/thegner/tools/arch_linux_gnu-32977.png

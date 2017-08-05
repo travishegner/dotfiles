@@ -42,11 +42,13 @@ call dein#add('ensime/ensime-vim')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 call dein#add('scrooloose/nerdtree')
 
+"git
+call dein#add('tpope/vim-fugitive')
+
 "disabled
 "call dein#add('godlygeek/tabular')
 "call dein#add('altercation/vim-colors-solarized')
 "call dein#add('Shougo/context_filetype.vim')
-"call dein#add('tpope/vim-fugitive')
 
 call dein#end()
 
