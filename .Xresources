@@ -3,11 +3,11 @@ URxvt.background: rgba:1400/1400/1400/eeee
 URxvt.scrollstyle: plain 
 URxvt.foreground: rgba:ffff/ffff/ffff/ffff
 !URxvt.font: xft:Anonymous Pro:size=16:antialias=true:hinting=true
-URxvt.font: xft:AnonymicePowerline Nerd Font:size=16:antialias=true:hinting=true:style=Regular
-Urxvt.letterSpace: 1
+URxvt.font: xft:AnonymicePowerline:size=16:antialias=true
 URxvt.scrollBar_right: true
 URxvt.saveLines: 65535
 URxvt.intensityStyles: false
+URxvt*letterSpace: 1
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
