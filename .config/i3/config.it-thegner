@@ -8,13 +8,13 @@ bar {
 
 bar {
 	tray_output none
-	output DVI-D-1
+	output DVI-D-0
 	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/left/left
 }
 
 bar {
 	tray_output none
-	output HDMI-1
+	output HDMI-0
 	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/right/right
 }
 

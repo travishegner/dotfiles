@@ -112,7 +112,7 @@ clearbb() {
 }
 
 rwireshark() {
-  local ipaddr=$(ip addr show enp7s0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
+  local ipaddr=$(ip addr show eth0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
   local host=$1
   shift
   local int=$1

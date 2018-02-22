@@ -22,15 +22,15 @@ export SSH_AUTH_SOCK
 sudo mount --bind ~/src ~/go/src
 sudo mount --bind ~/src/gitlab ~/src/gitlab.in.trilliumstaffing.com
 
-if "x$session" = "xawesome"; then
-	$session &
+if [ "x$session" = "xawesome" ]; then
+	$session -V -d all > ~/i3log/$(date +'%F-%k-%M-%S') 2>&1 &
 	pid=$!
 	sleep 1
 fi
 
 
 xscreensaver -no-splash &
-twmnd &
+#twmnd &
 #xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D1 -O.02 -I.02 &
 #xcompmgr -CcfF -I0.5 -O0.5 -D1 -t-5 -l-5 -r4.2 -o.82 &
 pulseaudio --start &
@@ -52,6 +52,6 @@ case $session in
 	;;
 esac
 
-if "x$session" = "xawesome"; then
+if [ "x$session" = "xawesome" ]; then
 	wait $pid
 fi
