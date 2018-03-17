@@ -3,7 +3,7 @@ URxvt.background: rgba:1400/1400/1400/eeee
 URxvt.scrollstyle: plain 
 URxvt.foreground: rgba:ffff/ffff/ffff/ffff
 !URxvt.font: xft:Anonymous Pro:size=16:antialias=true:hinting=true
-URxvt.font: xft:AnonymicePowerline Nerd Font:size=16:antialias=true:hinting=true:style=Regular
+URxvt.font: xft:AnonymicePowerline:size=16:antialias=true
 Urxvt.letterSpace: 1
 URxvt.scrollBar_right: true
 URxvt.saveLines: 65535

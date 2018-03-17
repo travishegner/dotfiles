@@ -55,10 +55,11 @@ call dein#end()
 filetype plugin on
 
 syntax on
+set hidden
 set number
 set rnu
 set list
-set lcs=tab:\|\ ,trail:·,eol:↲
+set lcs=tab:\|\ ,trail:·,eol:↲,space:·
 "set statusline+=%{fugitive#statusline()}
 
 
