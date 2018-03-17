@@ -62,6 +62,9 @@ alias ls='ls --color=auto'
 alias vim=nvim
 alias yolo='packer -Syu --noedit --noconfirm'
 alias time='/usr/bin/time -f "\nTime:\t\t%E\nRAM (kb):\t%M"'
+alias dc0-nomad='export NOMAD_ADDR=http://nomad.dc0.cl.trilliumstaffing.com:4646'
+alias dc1-nomad='export NOMAD_ADDR=http://nomad.dc1.cl.trilliumstaffing.com:4646'
+alias scala='TERM=xterm-color scala'
 
 #This is horribly, horribly a bad idea, I only do it for intranet appliances that use weak keys.
 #Don't do this unless you want to be pwnd
@@ -84,7 +87,7 @@ tssalt() {
     # First (${(q)@}) escapes all characters in the $@ array
     # that have special meaning,
     # second (${(j. .)…}) joins the array into one string
-    ssh -t thegner@salt.ad.trilliumstaffing.com sudo salt "${(j. .)${(q)@}}"
+    ssh -t thegner@salt.trilliumstaffing.com sudo salt "${(j. .)${(q)@}}"
 }
 
 tpass() {
@@ -109,7 +112,7 @@ clearbb() {
 }
 
 rwireshark() {
-  local ipaddr=$(ip addr show enp7s0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
+  local ipaddr=$(ip addr show eth0 | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}')
   local host=$1
   shift
   local int=$1
@@ -124,3 +127,6 @@ rwireshark() {
 [ -f /home/thegner/.travis/travis.sh ] && source /home/thegner/.travis/travis.sh
 
 unsetopt share_history
+
+export GOPATH=~/go
+export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH

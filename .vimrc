@@ -1,56 +1,64 @@
 set nocompatible              " be iMproved, required
+set nofoldenable
 set t_Co=256
 filetype off                  " required
 
 set rtp+=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
-call dein#begin(expand('~/.config/nvim/bundle'))
+if dein#load_state(expand('~/.config/nvim/bundle'))
+	call dein#begin(expand('~/.config/nvim/bundle'))
 
-"plugin manager
-call dein#add('Shougo/dein.vim')
+	"plugin manager
+	call dein#add(expand('~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim'))
 
-"autocomplete
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('Shougo/neoinclude.vim')
-call dein#add('zchee/deoplete-go', {'build': 'make'})
+	"autocomplete
+	call dein#add('Shougo/deoplete.nvim')
+	call dein#add('Shougo/neoinclude.vim')
+	call dein#add('Shougo/neosnippet')
+	call dein#add('Shougo/neosnippet-snippets')
+	call dein#add('zchee/deoplete-go', {'build': 'make'})
 
-"nav
-call dein#add('easymotion/vim-easymotion')
-call dein#add('Shougo/echodoc.vim')
-call dein#add('vim-airline/vim-airline')
-call dein#add('majutsushi/tagbar')
-call dein#add('bling/vim-bufferline')
+	"nav
+	call dein#add('easymotion/vim-easymotion')
+	call dein#add('Shougo/echodoc.vim')
+	call dein#add('vim-airline/vim-airline')
+	call dein#add('majutsushi/tagbar')
+	call dein#add('bling/vim-bufferline')
 
-"syntax
-call dein#add('scrooloose/syntastic')
-call dein#add('fatih/vim-go')
-call dein#add('Shougo/neopairs.vim')
-"call dein#add('jceb/vim-hier')
+	"syntax
+	call dein#add('scrooloose/syntastic')
+	call dein#add('fatih/vim-go')
+	call dein#add('Shougo/neopairs.vim')
+	call dein#add('fatih/vim-hclfmt')
+	"call dein#add('jceb/vim-hier')
 
-"colors/visuals
-"call dein#add('kien/rainbow_parentheses.vim')
-call dein#add('luochen1990/rainbow')
-call dein#add('saltstack/salt-vim')
-call dein#add('matthewtodd/vim-twilight')
-call dein#add('gabrielelana/vim-markdown')
-call dein#add('airblade/vim-gitgutter')
+	"colors/visuals
+	"call dein#add('kien/rainbow_parentheses.vim')
+	call dein#add('luochen1990/rainbow')
+	call dein#add('saltstack/salt-vim')
+	call dein#add('matthewtodd/vim-twilight')
+	call dein#add('gabrielelana/vim-markdown')
+	call dein#add('airblade/vim-gitgutter')
+	call dein#add('b4b4r07/vim-hcl')
 
-"scala
-call dein#add('derekwyatt/vim-scala')
-call dein#add('ensime/ensime-vim')
+	"scala
+	call dein#add('derekwyatt/vim-scala')
+	call dein#add('ensime/ensime-vim')
 
-"nerdtree
-call dein#add('Xuyuanp/nerdtree-git-plugin')
-call dein#add('scrooloose/nerdtree')
+	"nerdtree
+	call dein#add('Xuyuanp/nerdtree-git-plugin')
+	call dein#add('scrooloose/nerdtree')
 
-"git
-call dein#add('tpope/vim-fugitive')
+	"git
+	call dein#add('tpope/vim-fugitive')
 
-"disabled
-"call dein#add('godlygeek/tabular')
-"call dein#add('altercation/vim-colors-solarized')
-"call dein#add('Shougo/context_filetype.vim')
+	"disabled
+	"call dein#add('godlygeek/tabular')
+	"call dein#add('altercation/vim-colors-solarized')
+	"call dein#add('Shougo/context_filetype.vim')
 
-call dein#end()
+	call dein#end()
+	call dein#save_state()
+endif
 
 filetype plugin on
 
@@ -84,7 +92,7 @@ autocmd VimEnter,Colorscheme * :hi NonText ctermbg=none
 "autocmd Syntax * RainbowParenthesesLoadSquare
 "autocmd Syntax * RainbowParenthesesLoadBraces
 
-autocmd BufWritePost *.scala silent :EnTypeCheck
+"autocmd BufWritePost *.scala silent :EnTypeCheck
 
 "autocmd VimEnter *.scala NERDTree
 
@@ -93,12 +101,19 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
+imap <expr><CR> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<CR>"
+
+command Bq execute ":bp | bd #"
+
+let ensime_server_v2=1
 let g:EasyMotion_smartcase = 1
+let g:syntastic_php_checkers = ['php']
 let g:syntastic_go_checkers = ['go']
-let g:go_fmt_options = '-s'
+let g:go_fmt_options = ''
 let g:go_metalinter_enabled = ['gofmt', 'gotype', 'goimports', 'dupl', 'golint', 'structcheck', 'aligncheck', 'vet', 'errcheck', 'ineffassign', 'vetshadow', 'varcheck', 'deadcode', 'interfacer', 'goconst', 'gosimple', 'staticcheck']
 let g:echodoc_enable_at_startup = 1
 let g:deoplete#enable_at_startup = 1
+let g:neosnippet#enable_completed_snippet = 1
 let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
 let g:airline#extensions#tabline#enabled = 1
@@ -120,3 +135,5 @@ let g:rainbow_active = 1
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=DimGray
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=black
 "
+"call deoplete#custom#set('_', 'converters', ['converter_auto_paren'])
+set inccommand=nosplit

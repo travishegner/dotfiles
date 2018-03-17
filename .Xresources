@@ -8,6 +8,7 @@ Urxvt.letterSpace: 1
 URxvt.scrollBar_right: true
 URxvt.saveLines: 65535
 URxvt.intensityStyles: false
+URxvt*letterSpace: 1
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true

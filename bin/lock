@@ -10,4 +10,4 @@ if [ $pstatus = "Playing" ]; then
   #xdotool key XF86AudioPlay
 fi
 
-i3lock -t -c 000000 #-i /home/thegner/tools/arch_linux_gnu-32977.png
+xscreensaver-command -lock
