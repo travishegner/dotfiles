@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 set nofoldenable
 set t_Co=256
+set hidden
 filetype off                  " required
 
 set rtp+=~/.config/nvim/bundle/repos/github.com/Shougo/dein.vim
@@ -110,7 +111,7 @@ let g:EasyMotion_smartcase = 1
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_go_checkers = ['go']
 let g:go_fmt_options = ''
-let g:go_metalinter_enabled = ['gofmt', 'gotype', 'goimports', 'dupl', 'golint', 'structcheck', 'aligncheck', 'vet', 'errcheck', 'ineffassign', 'vetshadow', 'varcheck', 'deadcode', 'interfacer', 'goconst', 'gosimple', 'staticcheck']
+"let g:go_metalinter_enabled = ['gofmt', 'gotype', 'goimports', 'dupl', 'golint', 'structcheck', 'aligncheck', 'vet', 'errcheck', 'ineffassign', 'vetshadow', 'varcheck', 'deadcode', 'interfacer', 'goconst', 'gosimple', 'staticcheck']
 let g:echodoc_enable_at_startup = 1
 let g:deoplete#enable_at_startup = 1
 let g:neosnippet#enable_completed_snippet = 1
