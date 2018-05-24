@@ -9,7 +9,7 @@ session=$1
 source ~/tools/bin/detect_outputs
 # .zshrc is sourced automatically, and sourcing here now causes syntax errors with other shells
 #source ~/.zshrc
-xrdb ~/.Xresources
+#xrdb ~/.Xresources
 export EDITOR=nvim
 export GOPATH=~/go
 export LANG=en_US.UTF-8
