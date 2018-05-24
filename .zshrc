@@ -60,11 +60,11 @@ fi
 
 alias ls='ls --color=auto'
 alias vim=nvim
-alias yolo='packer -Syu --noedit --noconfirm'
+alias yolo='aurman -Syu --noedit --noconfirm'
 alias time='/usr/bin/time -f "\nTime:\t\t%E\nRAM (kb):\t%M"'
 alias dc0-nomad='export NOMAD_ADDR=http://nomad.dc0.cl.trilliumstaffing.com:4646'
 alias dc1-nomad='export NOMAD_ADDR=http://nomad.dc1.cl.trilliumstaffing.com:4646'
-alias scala='TERM=xterm-color scala'
+#alias scala='TERM=xterm-color scala'
 
 #This is horribly, horribly a bad idea, I only do it for intranet appliances that use weak keys.
 #Don't do this unless you want to be pwnd
@@ -91,19 +91,19 @@ tssalt() {
 }
 
 tpass() {
-  PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb pass "$@"
+  PASSWORD_STORE_DIR=/home/thegner/go/src/gitlab.in.trilliumstaffing.com/docs/passdb pass "$@"
 }
 
 gclone() {
   dir=$(echo $1 | sed 's/^http\(s*\):\/\///g' | sed 's/^git@//g' | sed 's/\.git$//g' | sed 's/:/\//g' )
-  git clone $1 "$HOME/src/$dir"
-  cd "$HOME/src/$dir"
+  git clone $1 "$HOME/go/src/$dir"
+  cd "$HOME/go/src/$dir"
 }
 
 #for working autocomplete:
 compdef _tpass tpass
 _tpass() {
-  PASSWORD_STORE_DIR=/home/thegner/src/gitlab/docs/passdb _pass
+  PASSWORD_STORE_DIR=/home/thegner/go/src/gitlab.in.trilliumstaffing.com/docs/passdb _pass
 }
 
 #clear the back buffer

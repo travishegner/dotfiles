@@ -2,7 +2,7 @@
 
 outputs=($(xrandr | grep ' connected'| awk '{print $1}' | tr -d '-' | sort))
 
-xrandr --output $(xrandr | grep ' connected' | awk '{print $1}' | sort | head -1) --primary
+xrandr --output $(xrandr | grep ' connected.*1920x1200+1920+0' | awk '{print $1}') --primary
 
 for o in "${!outputs[@]}"; do
 	eval $( echo ${outputs[$o]}=$(( $o + 1 )) )

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-pstatus=$(playerctl status)
+pstatus=$(playerctl status || echo "")
 #pstatus=$(pacmd list-sink-inputs | grep "state: RUNNING")
 #code=$?
 
 #if [ $code -eq 0 ]; then
-if [ $pstatus = "Playing" ]; then
+if [ "x$pstatus" = "xPlaying" ]; then
   playerctl play-pause
   #xdotool key XF86AudioPlay
 fi
