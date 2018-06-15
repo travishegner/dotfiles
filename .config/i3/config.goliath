@@ -2,13 +2,13 @@
 # finds out, if available)
 bar {
 	tray_output primary
-	output DP-3
+	output DVI-I-1
 	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/main
 }
 
 bar {
 	tray_output none
-	output DP-5
+	output DVI-D-0
 	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/left/left
 }
 
@@ -17,4 +17,3 @@ bar {
 	output HDMI-0
 	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/right/right
 }
-

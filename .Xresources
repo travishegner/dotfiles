@@ -13,6 +13,9 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 
+URxvt*cursorColor: #ffffff
+URxvt*termName: rxvt-unicode-256color
+
 URxvt*color0:   #141414
 URxvt*color1:   #cf6a4c
 URxvt*color2:   #839061
