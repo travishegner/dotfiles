@@ -67,7 +67,7 @@ set hidden
 set number
 set rnu
 set list
-set lcs=tab:\|\ ,trail:·,eol:↲,space:·
+set lcs=tab:\|\ ,trail:·,eol:⏎,space:·
 "set statusline+=%{fugitive#statusline()}
 
 
