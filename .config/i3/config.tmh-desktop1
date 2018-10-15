@@ -6,7 +6,7 @@
 bar {
 	tray_output primary
 	output DVI-0
-	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/main
+	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/home
 }
 
 bar {
