@@ -42,7 +42,7 @@ if dein#load_state(expand('~/.config/nvim/bundle'))
 "	"nav
 	call dein#add('easymotion/vim-easymotion')
 	call dein#add('Shougo/echodoc.vim')
-"	call dein#add('vim-airline/vim-airline')
+	call dein#add('vim-airline/vim-airline')
 	call dein#add('majutsushi/tagbar')
 	call dein#add('bling/vim-bufferline')
 
