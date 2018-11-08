@@ -26,8 +26,8 @@ xscreensaver -no-splash &
 twmnd &
 #xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D1 -O.02 -I.02 &
 xcompmgr -CcfF -I0.5 -O0.5 -D1 -t-5 -l-5 -r4.2 -o.82 &
-#pulseaudio --start &
 volumeicon &
+nm-applet &
 #xchat &
 #mattermost-desktop &
 numlockx on &
