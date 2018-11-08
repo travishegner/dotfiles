@@ -2,7 +2,7 @@
 export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 export TERMINAL=xfce4-terminal
 
-cat /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/config.base /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/config.$(hostname) > /home/thegner/.config/i3/config
+cat /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.base /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.$(hostname) > /home/thegner/.config/i3/config
 
 session=$1
 
@@ -26,10 +26,10 @@ xscreensaver -no-splash &
 twmnd &
 #xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D1 -O.02 -I.02 &
 xcompmgr -CcfF -I0.5 -O0.5 -D1 -t-5 -l-5 -r4.2 -o.82 &
-pulseaudio --start &
+#pulseaudio --start &
 volumeicon &
 #xchat &
-mattermost-desktop &
+#mattermost-desktop &
 numlockx on &
 #autocutsel -fork
 #autocutsel -selection PRIMARY -fork
