@@ -15,6 +15,7 @@ export GOPATH=~/go
 export LANG=en_US.UTF-8
 export PKG_CONFIG_PATH=:$HOME/tools/pkgconfig$PKG_CONFIG_PATH
 export JAVA_HOME=/usr/lib/jvm/default/
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 
 #_JAVA_AWT_WM_NONREPARENTING=1; export _JAVA_AWT_WM_NONREPARENTING
 eval $(gnome-keyring-daemon --start)
