@@ -5,12 +5,18 @@
 
 bar {
 	tray_output primary
-	output DVI-0
+	output DP-4
 	status_command /home/thegner/src/github.com/travishegner/i3gobar/example/home/home
 }
 
 bar {
 	tray_output none
-	output DVI-1
-#	status_command /home/thegner/src/github.com/travishegner/i3gobar/example/left/left
+	output DP-2
+	status_command /home/thegner/src/github.com/travishegner/i3gobar/example/left/left
+}
+
+bar {
+	tray_output none
+	output DP-0
+	status_command /home/thegner/src/github.com/travishegner/i3gobar/example/right/right
 }
