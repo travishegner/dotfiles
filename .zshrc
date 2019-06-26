@@ -130,3 +130,4 @@ unsetopt share_history
 
 export GOPATH=~/go
 export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
+source /etc/profile.d/conda.sh
