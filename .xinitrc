@@ -2,7 +2,7 @@
 export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 export TERMINAL=xfce4-terminal
 
-cat /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.base /home/thegner/src/github.com/travishegner/dotfiles/.config/i3/config.$(hostname) > /home/thegner/.config/i3/config
+cat /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/config.base /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/config.$(hostname) > /home/thegner/.config/i3/config
 
 session=$1
 
@@ -36,6 +36,7 @@ numlockx on &
 #autocutsel -selection PRIMARY -fork
 #redshift -l 42.324696:-85.522443 &
 #zinc -start
+slack &
 
 case $session in
 "i3")
