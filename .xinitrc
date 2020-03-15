@@ -40,6 +40,6 @@ numlockx on &
 
 case $session in
 "i3")
-	feh --bg-scale /home/thegner/tools/arch_linux_gnu-32977.png
+	feh --bg-scale /home/thegner/tools/arch.png
 	;;
 esac

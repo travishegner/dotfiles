@@ -4,3 +4,7 @@ bar {
 	tray_output primary
 	status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/eutychus/eutychus
 }
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
