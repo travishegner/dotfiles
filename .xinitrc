@@ -27,7 +27,6 @@ xscreensaver -no-splash &
 twmnd &
 #xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D1 -O.02 -I.02 &
 xcompmgr -CcfF -I0.5 -O0.5 -D1 -t-5 -l-5 -r4.2 -o.82 &
-#pulseaudio > $HOME/.pulse-out 2>&1 &
 volumeicon &
 nm-applet &
 #xchat &
@@ -37,6 +36,7 @@ numlockx on &
 #autocutsel -selection PRIMARY -fork
 #redshift -l 42.324696:-85.522443 &
 #zinc -start
+slack &
 
 case $session in
 "i3")
