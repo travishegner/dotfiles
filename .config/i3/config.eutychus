@@ -3,7 +3,7 @@
 bar {
 	tray_output primary
 	#status_command /home/thegner/go/src/github.com/travishegner/i3gobar/example/eutychus/eutychus
-	status_command /home/thegner/go/src/github.com/travishegner/goi3status/goi3status /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/eutychus.yaml
+	status_command /home/thegner/go/src/github.com/travishegner/goi3status/goi3status -config /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/eutychus.yaml
 }
 
 # Screen brightness

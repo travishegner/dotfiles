@@ -27,6 +27,12 @@ modules:
     config:
       attribute: "ram_used_percent"
       refresh: 2000
+      final_separator_width: 25
   - name: DateTime
     config:
       format: "2006-01-02 15:04:05 MST"
+      final_separator_width: 25
+  - name: Battery
+    config:
+      label: "bat:"
+
