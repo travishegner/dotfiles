@@ -10,7 +10,7 @@ modules:
   - name: CPU
     config:
       monitor: "graph"
-      refresh: 1000
+      refresh: 500
       final_separator_width: 25
       block_separator_width: 3
   - name: CPU
