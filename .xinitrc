@@ -24,9 +24,11 @@ export SSH_AUTH_SOCK
 #sudo mount --bind ~/src ~/go/src
 
 xscreensaver -no-splash &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 #twmnd &
 #xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D1 -O.02 -I.02 &
-xcompmgr -CcfF -I0.5 -O0.5 -D1 -t-5 -l-5 -r4.2 -o.82 &
+#xcompmgr -CcfF -I0.5 -O0.5 -D1 -t-5 -l-5 -r4.2 -o.82 &
+#picom -Ccf -I.5 -O.5 -D1 -t-5 -l-5 -r4 -o.82 -i1.0 &
 volumeicon &
 #xchat &
 #mattermost-desktop &
@@ -36,6 +38,10 @@ numlockx on &
 #redshift -l 42.324696:-85.522443 &
 #zinc -start
 slack &
+solaar -w hide &
+nut-monitor -H &
+
+xmodmap ~/.xmodmaprc
 
 case $session in
 "i3")

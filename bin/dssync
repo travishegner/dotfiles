@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo syncoid -r root@server:tank/data tank/backup/server-tank_data
+sudo syncoid -r root@server:tank/docker/volumes tank/backup/server-tank_docker_volumes
+sudo syncoid -r zroot/root root@server:tank/backup/enoch-zroot_root
+sudo syncoid -r zroot/data root@server:tank/backup/enoch-zroot_data

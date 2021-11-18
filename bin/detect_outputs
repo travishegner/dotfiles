@@ -1,6 +1,6 @@
 #!/bin/bash
 
-outputs=($(xrandr | grep ' connected'| awk '{print $1}' | tr -d '-' | sort -r))
+outputs=($(xrandr | grep ' connected'| awk '{print $1}' | tr -d '-' | tr -d '.' | sort -r))
 
 #xrandr --output $(xrandr | grep ' connected.*1920x1200+1920+0' | awk '{print $1}') --primary
 

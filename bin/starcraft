@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PULSE_SINK=alsa_output.usb-Plantronics_Plantronics_BT600_4168a0d9bbe2ec49af44f9c09289426e-00.analog-stereo
+export PULSE_SOURCE=alsa_input.usb-Plantronics_Plantronics_BT600_4168a0d9bbe2ec49af44f9c09289426e-00.mono-fallback
+
+playonlinux --run "StarCraft"

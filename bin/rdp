@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#xfreerdp --plugin cliprdr -z --ignore-certificate -g 1600x1000 -u ad\\thegner $1
+
+#if [ $? -eq 131 ] 
+#then
+	#xfreerdp +clipboard +compression /cert-ignore /size:1870x950 /d:AD /u:thegner /v:$1
+	xfreerdp +clipboard +compression /cert-ignore /dynamic-resolution /d:americas.porsche.biz /u:duob8zv /v:$1
+#fi

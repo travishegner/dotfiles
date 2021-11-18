@@ -3,3 +3,7 @@ modules:
     config:
       refresh: 5000
       cmd: "echo \"$(playerctl metadata artist) - $(playerctl metadata title)\""
+  - name: ShellCommand
+    config:
+      refresh: 300000
+      cmd: "echo \"$(/home/thegner/tools/bin/archzfs_sync.sh)\""

@@ -1,17 +1,17 @@
 bar {
 	tray_output primary
-	output DP-4
+	output DP-4.8
 	status_command "/home/thegner/go/src/github.com/travishegner/goi3status/goi3status -config /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/enoch_middle.yaml"
 }
 
 bar {
 	tray_output none
-	output DP-2
+	output DP-4.1.8
 	status_command "/home/thegner/go/src/github.com/travishegner/goi3status/goi3status -config /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/enoch_left.yaml"
 }
 
 bar {
 	tray_output none
-	output DP-0
+	output DP-4.1.1.8
 	status_command "/home/thegner/go/src/github.com/travishegner/goi3status/goi3status -config /home/thegner/go/src/github.com/travishegner/dotfiles/.config/i3/enoch_right.yaml"
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # gives webkit error
-#/opt/Citrix/ICAClient/selfservice --icaroot /opt/Citrix/ICAClient
+/opt/Citrix/ICAClient/selfservice --icaroot /opt/Citrix/ICAClient
 
-/opt/Citrix/ICAClient/util/storebrowse --launch 'Controller.2016 IT Desktop $S17-25' https://intstore.trilliumstaffing.com/Citrix/Store/discovery
+#/opt/Citrix/ICAClient/util/storebrowse --launch 'Controller.2016 IT Desktop $S17-25' https://intstore.trilliumstaffing.com/Citrix/Store/discovery

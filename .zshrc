@@ -60,7 +60,7 @@ fi
 
 alias ls='ls --color=auto'
 alias vim=nvim
-alias yolo='aurman -Syu --noedit --noconfirm'
+alias yolo='yay --noconfirm'
 alias time='/usr/bin/time -f "\nTime:\t\t%E\nRAM (kb):\t%M"'
 alias dc0-nomad='export NOMAD_ADDR=http://nomad.dc0.cl.trilliumstaffing.com:4646'
 alias dc1-nomad='export NOMAD_ADDR=http://nomad.dc1.cl.trilliumstaffing.com:4646'
@@ -96,8 +96,12 @@ tpass() {
 
 gclone() {
   dir=$(echo $1 | sed 's/^http\(s*\):\/\///g' | sed 's/^git@//g' | sed 's/\.git$//g' | sed 's/:/\//g' )
-  git clone $1 "$HOME/go/src/$dir"
+  git clone $1 "$HOME/go/src/$dir" || return
   cd "$HOME/go/src/$dir"
+  if [[ $dir == *"gitlab.rebellion.dev"* ]]; then
+    echo "detected rebellion repo, setting user.email thegner@rebelliondefense.com"
+    git config user.email thegner@rebelliondefense.com
+  fi
 }
 
 #for working autocomplete:
@@ -129,5 +133,7 @@ rwireshark() {
 unsetopt share_history
 
 export GOPATH=~/go
+export GOPRIVATE=gitea.travishegner.com,rebellion.dev
 export PATH=$HOME/tools/bin:$GOPATH/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
-source /etc/profile.d/conda.sh
+#source /etc/profile.d/conda.sh
+source $HOME/tools/funcs/garter.sh
